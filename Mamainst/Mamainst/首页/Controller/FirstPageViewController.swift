@@ -18,7 +18,7 @@ class FirstPageViewController: BaseViewController,UITableViewDataSource,UITableV
         super.viewDidLoad()
         automaticallyAdjustsScrollViewInsets = false;
         
-        addSubviews();
+        addSubviews();   
     }
     
     // MARK: - addSubview + layout

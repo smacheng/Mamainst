@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LiveViewController: BaseTableViewController {
+class LiveViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

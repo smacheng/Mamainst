@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VIpViewController: BaseTableViewController {
+class VIpViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

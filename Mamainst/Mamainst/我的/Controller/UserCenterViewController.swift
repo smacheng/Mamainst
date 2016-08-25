@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserCenterViewController: BaseTableViewController {
+class UserCenterViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

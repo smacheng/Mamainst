@@ -43,7 +43,7 @@ class FirstPageViewController: BaseViewController {
         }
         
     }
-   
+    
     // MARK: - section中添加视图
     /**
      添加banner
@@ -88,8 +88,6 @@ class FirstPageViewController: BaseViewController {
     }
  
 }
-
-
 
 
 
@@ -156,11 +154,6 @@ extension FirstPageViewController: UICollectionViewDelegate, UICollectionViewDat
                 return 0
             }
     }
-    
-    
-  
-    
-
 }
 
 

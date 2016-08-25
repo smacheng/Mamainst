@@ -17,8 +17,6 @@ class MMClassificationCell: BaseCollectionViewCell {
         super.init(frame: frame)
         
         classIcon = UIImageView.init()
-//        classIcon.layer.cornerRadius = 72 / 2.0
-//        classIcon.layer.masksToBounds = true
         classIcon.image = UIImage.init(named: "btn_my_defaulthead")
         self.addSubview(classIcon)
         

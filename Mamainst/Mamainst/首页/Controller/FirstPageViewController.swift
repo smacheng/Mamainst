@@ -29,6 +29,7 @@ private enum CollectionSection:Int {
 
 let bannerHeight = ScreenWidth * 9.0 / 16.0
 
+private var instNews: MMInstNewsView!
 
 class FirstPageViewController: BaseViewController {
    
@@ -76,7 +77,7 @@ class FirstPageViewController: BaseViewController {
         
         collection.delegate = self
         collection.dataSource = self
-        collection.backgroundColor = UIColor.rj_backgroundColorHex()
+        collection.backgroundColor = UIColor.whiteColor()
         return collection
     }()
     
@@ -110,6 +111,21 @@ extension FirstPageViewController: UICollectionViewDelegate, UICollectionViewDat
         else if indexPath.section == CollectionSection.Classification.rawValue {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MMClassificationCell", forIndexPath: indexPath) as! MMClassificationCell
             cell.backgroundColor = UIColor.whiteColor()
+            return cell
+        }
+        /** 学院头条 */
+        else if indexPath.section == CollectionSection.InstNews.rawValue {
+            for item in cell.contentView.subviews {
+                item.removeFromSuperview()
+            }
+            if (instNews == nil) {
+                instNews = MMInstNewsView()
+                instNews.frame.size = cell.contentView.frame.size
+                instNews.center = cell.contentView.center
+                cell.addSubview(instNews)
+                instNews.datas = ["da","eee","xxxxx","adxv124324"]
+            }
+            
             return cell
         }
         
@@ -171,7 +187,8 @@ extension FirstPageViewController: UICollectionViewDelegateFlowLayout {
             return UIEdgeInsetsZero
         case CollectionSection.Classification.rawValue:
             return UIEdgeInsetsMake(0, 0, 0, 0)
-            
+        case CollectionSection.InstNews.rawValue:
+            return UIEdgeInsetsMake(10, 0, 0, 0)
         default:
             return UIEdgeInsetsZero
         }
@@ -216,8 +233,9 @@ extension FirstPageViewController: UICollectionViewDelegateFlowLayout {
         
         case CollectionSection.Classification.rawValue:
             return CGSizeMake(ScreenWidth / 5, 90)
-            //        case 2:
-            //            return CGSizeMake(<#T##width: CGFloat##CGFloat#>, <#T##height: CGFloat##CGFloat#>)
+       
+        case CollectionSection.InstNews.rawValue:
+            return CGSizeMake(ScreenWidth, 40)
             //        case 3:
             //            return CGSizeMake(<#T##width: CGFloat##CGFloat#>, <#T##height: CGFloat##CGFloat#>)
             //        case 4:

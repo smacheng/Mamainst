@@ -81,7 +81,7 @@ class AdsPlayView: UIView {
         addSubview(collectionView)
         insertSubview(pageControl, aboveSubview: self.collectionView)
         self.placeholderImage = placeholderImage
-        self.switchInterval = 5.0
+        self.switchInterval = 2.0
     }
     
     required init?(coder aDecoder: NSCoder) {
